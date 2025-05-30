@@ -1,8 +1,14 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const ServerError: React.FC = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleBackToDashboard = () => {
+    navigate('/super-admin/dashboard'); // Navigate function
+  };
+
   return (
     <Container>
       <Row className="justify-content-center align-items-center min-vh-100">
@@ -13,7 +19,8 @@ const ServerError: React.FC = () => {
             Something went wrong on our servers. We're working to fix the issue.
             Please try again later or contact support if the problem persists.
           </p>
-          <Button as={Link} to="/super-admin/dashboard" variant="primary">
+          {/* Updated Button */}
+          <Button variant="primary" onClick={handleBackToDashboard}>
             Back to Dashboard
           </Button>
         </Col>

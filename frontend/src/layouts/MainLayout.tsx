@@ -11,7 +11,7 @@ interface SystemMessage {
   id: string;
   title: string;
   message: string;
-  type: 'success' | 'danger' | 'warning' | 'info';
+  type: 'success' | 'danger' | 'warning' | 'info' | 'dark'; // Add 'dark' here
   autohide?: boolean;
   delay?: number;
 }
