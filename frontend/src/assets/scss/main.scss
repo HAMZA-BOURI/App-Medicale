@@ -1,0 +1,116 @@
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Custom variables
+@import 'variables';
+
+// Custom mixins
+@import 'mixins';
+
+// Dashboard styles
+@import 'dashboard';
+
+// Global styles
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+// Sidebar styles
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: width 0.3s ease;
+  
+  &.collapsed {
+    width: 70px;
+  }
+  
+  &.mobile {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    
+    &.open {
+      transform: translateX(0);
+    }
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    
+    &:hover, &.active {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// Main content styles
+.main-content {
+  margin-left: 250px;
+  min-height: 100vh;
+  transition: margin 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  
+  &.expanded {
+    margin-left: 70px;
+  }
+  
+  @media (max-width: 991.98px) {
+    margin-left: 0;
+    
+    &.expanded {
+      margin-left: 0;
+    }
+  }
+  
+  .page-content {
+    flex: 1;
+  }
+}
+
+// Avatar styles
+.avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+// Page title styles
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+// Badge styles
+.badge-sm {
+  font-size: 0.6rem;
+  padding: 0.2em 0.4em;
+}
+
+// Table styles
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// Card styles
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  
+  .card-header {
+    font-weight: 500;
+  }
+}

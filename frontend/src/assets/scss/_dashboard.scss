@@ -1,0 +1,333 @@
+/* src/assets/scss/_dashboard.scss */
+
+// Dashboard specific styles
+.dashboard-container {
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    border-radius: 0.75rem;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    }
+    
+    .card-header {
+      background-color: transparent;
+      border-bottom: none;
+      padding: 1.25rem 1.25rem 0.75rem;
+      
+      h5 {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+    }
+    
+    .card-footer {
+      background-color: transparent;
+      border-top: none;
+      padding: 0.75rem 1.25rem 1.25rem;
+    }
+  }
+  
+  // Summary cards
+  .summary-card {
+    .icon-bg {
+      width: 48px;
+      height: 48px;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  // Tables
+  .table {
+    th {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: #495057;
+    }
+    
+    td {
+      vertical-align: middle;
+      font-size: 0.9rem;
+    }
+    
+    &.table-borderless {
+      td, th {
+        padding: 0.75rem;
+      }
+    }
+  }
+  
+  // Progress bars
+  .progress-sm {
+    height: 6px;
+    border-radius: 3px;
+  }
+  
+  // Badges
+  .badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    
+    &.bg-opacity-10 {
+      background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+    }
+  }
+  
+  // Charts area
+  .chart-container {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    padding: 1rem 0;
+  }
+  
+  // Activity items
+  .activity-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+  }
+  
+  // Events list
+  .event-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .event-date {
+      width: 45px;
+      height: 45px;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+  }
+  
+  // Quick actions
+  .quick-actions {
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+    }
+  }
+  
+  // Search bar
+  .search-bar {
+    .input-group {
+      border-radius: 0.5rem;
+      overflow: hidden;
+      
+      .input-group-text, .form-control {
+        border-color: #e9ecef;
+        background-color: #f8f9fa;
+      }
+      
+      .form-control:focus {
+        box-shadow: none;
+        border-color: #cfd4da;
+      }
+    }
+  }
+  
+  // User avatar
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #fff;
+    background-color: #6c757d;
+  }
+  
+  // Status indicators
+  .status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    
+    &.status-active {
+      background-color: #28a745;
+    }
+    
+    &.status-inactive {
+      background-color: #ffc107;
+    }
+    
+    &.status-suspended {
+      background-color: #dc3545;
+    }
+  }
+  
+  // Stats cards
+  .stats-card {
+    .stat-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: #6c757d;
+    }
+    
+    .stat-change {
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      
+      &.positive {
+        color: #28a745;
+      }
+      
+      &.negative {
+        color: #dc3545;
+      }
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 767.98px) {
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start !important;
+      
+      .card-header-actions {
+        margin-top: 0.5rem;
+        width: 100%;
+        justify-content: flex-end;
+      }
+    }
+    
+    .action-buttons {
+      .btn {
+        padding: 0.375rem 0.5rem;
+        
+        .btn-text {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Dashboard layout
+.main-layout {
+  .sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.3s;
+    
+    &.collapsed {
+      min-width: 70px;
+      max-width: 70px;
+    }
+    
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      border-radius: 0.375rem;
+      margin-bottom: 0.25rem;
+      
+      &:hover, &.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+      
+      .nav-icon {
+        margin-right: 0.75rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  .main-content {
+    flex: 1;
+    overflow-x: hidden;
+    
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      
+      .navbar-brand {
+        font-weight: 600;
+      }
+      
+      .dropdown-menu {
+        min-width: 260px;
+        padding: 0;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        
+        .dropdown-item {
+          padding: 0.75rem 1rem;
+          
+          &:active {
+            background-color: #f8f9fa;
+            color: #212529;
+          }
+        }
+        
+        .dropdown-header {
+          padding: 0.75rem 1rem;
+          font-weight: 600;
+          border-bottom: 1px solid #e9ecef;
+        }
+        
+        .dropdown-divider {
+          margin: 0;
+        }
+      }
+    }
+    
+    .footer {
+      padding: 0.75rem 0;
+      font-size: 0.875rem;
+      color: #6c757d;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+// Custom mixins
+
+@mixin transition(: all, : 0.3s, : ease) {
+  transition:   ;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
